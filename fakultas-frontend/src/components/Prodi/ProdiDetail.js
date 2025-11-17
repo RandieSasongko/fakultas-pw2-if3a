@@ -83,6 +83,7 @@ const ProdiDetail = () => {
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Program Studi Details</h2>
             
             <div className="space-y-4">
+              {/* Faculty Information dengan Optional Chaining */}
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
                   <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,12 +92,16 @@ const ProdiDetail = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Faculty</p>
-                  <Link 
-                    to={`/fakultas/${prodi.fakultas.id}`}
-                    className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
-                  >
-                    {prodi.fakultas.nama}
-                  </Link>
+                  {prodi.fakultas ? (
+                    <Link 
+                      to={`/fakultas/${prodi.fakultas.id}`}
+                      className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                    >
+                      {prodi.fakultas.nama}
+                    </Link>
+                  ) : (
+                    <span className="text-gray-500 italic">No faculty assigned</span>
+                  )}
                 </div>
               </div>
 
