@@ -42,7 +42,6 @@ const Login = () => {
       [name]: value,
     });
     
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors({
         ...errors,
@@ -66,7 +65,6 @@ const Login = () => {
     if (result.success) {
       navigate('/fakultas');
     } else {
-      // Set general error
       setErrors({ general: result.message });
     }
     

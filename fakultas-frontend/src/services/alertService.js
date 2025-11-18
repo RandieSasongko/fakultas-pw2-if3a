@@ -1,8 +1,6 @@
-// src/services/alertService.js (React Hot Toast Version)
 import toast from 'react-hot-toast';
 import { FaCheck, FaExclamationTriangle, FaInfoCircle, FaTimes } from 'react-icons/fa';
 
-// Jika tidak mau install icons, bisa gunakan SVG atau text biasa
 const ToastIcons = {
   success: (
     <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
